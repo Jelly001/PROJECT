@@ -37,7 +37,7 @@ function rememberMyFilm () {
 
 rememberMyFilm();
 
-function detectPersonalLevel(){
+function detectPersonalLevel () {
     if (personalMovieDB.count < 10) {
         console.log("Просмотрено довольно мало фильмов");
     } else if (personalMovieDB.count >= 10 && personalMovieDB.count < 30) {
@@ -51,4 +51,19 @@ function detectPersonalLevel(){
 
 detectPersonalLevel();
 
-console.log(personalMovieDB);
+function showMyBD(hidden) {
+    if (!hidden) {
+        console.log(personalMovieDB);
+    }
+}
+
+showMyBD(personalMovieDB.privat);
+
+function writeYourGeners () {
+    for(let i = 1; i <= 3; i++){
+        const genre = prompt(`Какой ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i -1] = genre;
+    }
+}
+
+writeYourGeners();
